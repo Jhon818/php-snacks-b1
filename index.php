@@ -29,14 +29,14 @@ $teams = [
         "puntiCasa" => 55,
         "puntiOspite" => 60
     ]
-    ];
-    // Stampiamo a schermo tutte le partite con questo schema.
-    // Olimpia Milano - Cantù | 55-60 -->
+];
+// Stampiamo a schermo tutte le partite con questo schema.
+// Olimpia Milano - Cantù | 55-60 -->
 foreach ($teams as $item) {
     echo $item['squadraCasa'] . " " . $item['squadraOspite'] . ' ' . "|" . ' ' . $item['puntiCasa'] . '-' . $item['puntiOspite'] . '<br>';
-  }
+}
 
-  ## Snack 2
+## Snack 2
 // Passare come parametri GET name, mail e age e verificare
 $name = $_GET['name'];
 
@@ -60,9 +60,8 @@ if (is_numeric($age)) {
 
 // Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 if ($name == true && $mail == true && $age == true) {
-   echo 'Accesso riuscito';
-}
-else {
+    echo 'Accesso riuscito';
+} else {
     echo 'Accesso negato';
 }
 ?>
@@ -116,8 +115,26 @@ $posts = [
 
 
 foreach ($posts as $key => $dates) {
-    foreach ($dates as $post ) {
-       echo $key . var_dump($post);
+    foreach ($dates as $post) {
+        echo $key . var_dump($post);
     }
-  }
+}
+?>
+
+<!-- 
+Snack 4
+Creare un array con 15 numeri casuali ( da 1 a 100), tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+
+<?php
+$randomNum = [];
+
+
+while (count($randomNum) < 15) {
+    $newNum = rand(1, 100);
+    if (!in_array($newNum, $randomNum)) {
+        $randomNum[] = $newNum;
+    }
+}
+
+var_dump($randomNum);
 ?>
