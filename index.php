@@ -138,3 +138,12 @@ while (count($randomNum) < 15) {
 
 var_dump($randomNum);
 ?>
+<!-- 
+## Snack 5
+Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi.  -->
+<?php
+    $paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, voluptates! Impedit nam non autem quo. Excepturi ut quo inventore mollitia at nam facere voluptates animi, aliquam, obcaecati officiis dolor nemo?';
+    // Ogni punto un nuovo paragrafo.
+  $paragraph =   explode('.' , $paragraph);
+  var_dump($paragraph);
+?>
