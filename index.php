@@ -196,6 +196,7 @@ foreach ($students['student1'] as $key => $info) {
         }
 
         $sum = array_sum($votes);
+        // fix the length of $key 
         echo $sum / 3;
 
     }
