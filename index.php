@@ -10,25 +10,25 @@ Olimpia Milano - Cantù | 55-60 -->
 // array con partite di basket
 
 $teams = [
-    //arrays con squadre e punteggi 
+    //arrays con squadre e punteggi
     [
         "squadraCasa" => "Olimpia Milano",
         "squadraOspite" => "Cantù",
         "puntiCasa" => 55,
-        "puntiOspite" => 60
+        "puntiOspite" => 60,
     ],
     [
         "squadraCasa" => "squadra2",
         "squadraOspite" => "squadra2",
         "puntiCasa" => 55,
-        "puntiOspite" => 60
+        "puntiOspite" => 60,
     ],
     [
         "squadraCasa" => "squadra3",
         "squadraOspite" => "squadra3",
         "puntiCasa" => 55,
-        "puntiOspite" => 60
-    ]
+        "puntiOspite" => 60,
+    ],
 ];
 // Stampiamo a schermo tutte le partite con questo schema.
 // Olimpia Milano - Cantù | 55-60 -->
@@ -48,7 +48,8 @@ $age = $_GET['age'];
 // sia più lungo di 3 caratteri,
 if (strlen($name) > 3) {
     echo $name;
-};
+}
+;
 // che mail contenga un punto e una chiocciola e che age sia un numero.
 if (strpos($mail, '.@') !== false) {
     echo $mail;
@@ -56,7 +57,8 @@ if (strpos($mail, '.@') !== false) {
 
 if (is_numeric($age)) {
     echo $age;
-};
+}
+;
 
 // Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 if ($name == true && $mail == true && $age == true) {
@@ -78,41 +80,39 @@ $posts = [
         [
             'title' => 'Post 1',
             'author' => 'Michele Papagni',
-            'text' => 'Testo post 1'
+            'text' => 'Testo post 1',
         ],
         [
             'title' => 'Post 2',
             'author' => 'Michele Papagni',
-            'text' => 'Testo post 2'
+            'text' => 'Testo post 2',
         ],
     ],
     '10/02/2019' => [
         [
             'title' => 'Post 3',
             'author' => 'Michele Papagni',
-            'text' => 'Testo post 3'
-        ]
+            'text' => 'Testo post 3',
+        ],
     ],
     '15/05/2019' => [
         [
             'title' => 'Post 4',
             'author' => 'Michele Papagni',
-            'text' => 'Testo post 4'
+            'text' => 'Testo post 4',
         ],
         [
             'title' => 'Post 5',
             'author' => 'Michele Papagni',
-            'text' => 'Testo post 5'
+            'text' => 'Testo post 5',
         ],
         [
             'title' => 'Post 6',
             'author' => 'Michele Papagni',
-            'text' => 'Testo post 6'
-        ]
+            'text' => 'Testo post 6',
+        ],
     ],
 ];
-
-
 
 foreach ($posts as $key => $dates) {
     foreach ($dates as $post) {
@@ -121,13 +121,12 @@ foreach ($posts as $key => $dates) {
 }
 ?>
 
-<!-- 
+<!--
 Snack 4
 Creare un array con 15 numeri casuali ( da 1 a 100), tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
 
 <?php
 $randomNum = [];
-
 
 while (count($randomNum) < 15) {
     $newNum = rand(1, 100);
@@ -138,13 +137,13 @@ while (count($randomNum) < 15) {
 
 var_dump($randomNum);
 ?>
-<!-- 
+<!--
 ## Snack 5
 Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi.  -->
 <?php
 $paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, voluptates! Impedit nam non autem quo. Excepturi ut quo inventore mollitia at nam facere voluptates animi, aliquam, obcaecati officiis dolor nemo?';
 // Ogni punto un nuovo paragrafo.
-$paragraph =   explode('.', $paragraph);
+$paragraph = explode('.', $paragraph);
 var_dump($paragraph);
 ?>
 
@@ -153,6 +152,11 @@ var_dump($paragraph);
 Utilizzare questo array: https://pastebin.com/CkX3680A. Includerlo in un file database.php... Stampiamo poi il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde -->
 <?php
 include __DIR__ . '/database.php'
+?>
+<!-- ## Snack 7
+Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno. -->
+<?php
+include __DIR__ . '/students.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -167,18 +171,38 @@ include __DIR__ . '/database.php'
 <body>
     <div class="teachers">
         <?php
-       foreach ($db['teachers'] as $key => $rule) {
-        var_dump($rule);
-    }
-        ?>
+foreach ($db['teachers'] as $key => $rule) {
+    var_dump($rule);
+}
+?>
     </div>
     <div class="pm">
         <?php
-        foreach ($db['pm'] as $key => $rule) {
-            var_dump($rule);
+foreach ($db['pm'] as $key => $rule) {
+    var_dump($rule);
+}
+
+?>
+    </div>
+
+    <div class="students">
+    <?php
+foreach ($students['student1'] as $key => $info) {
+    if ($info !== $votes) {
+        var_dump($info);
+    } else {
+        foreach ($votes as $key => $vote) {
+            break;
         }
-        
-        ?>
+
+        $sum = array_sum($votes);
+        echo $sum / 3;
+
+    }
+
+}
+
+?>
     </div>
 
     <style>
