@@ -142,8 +142,56 @@ var_dump($randomNum);
 ## Snack 5
 Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi.  -->
 <?php
-    $paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, voluptates! Impedit nam non autem quo. Excepturi ut quo inventore mollitia at nam facere voluptates animi, aliquam, obcaecati officiis dolor nemo?';
-    // Ogni punto un nuovo paragrafo.
-  $paragraph =   explode('.' , $paragraph);
-  var_dump($paragraph);
+$paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, voluptates! Impedit nam non autem quo. Excepturi ut quo inventore mollitia at nam facere voluptates animi, aliquam, obcaecati officiis dolor nemo?';
+// Ogni punto un nuovo paragrafo.
+$paragraph =   explode('.', $paragraph);
+var_dump($paragraph);
 ?>
+
+
+<!-- SNACK6:
+Utilizzare questo array: https://pastebin.com/CkX3680A. Includerlo in un file database.php... Stampiamo poi il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde -->
+<?php
+include __DIR__ . '/database.php'
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB</title>
+</head>
+
+<body>
+    <div class="teachers">
+        <?php
+       foreach ($db['teachers'] as $key => $rule) {
+        var_dump($rule);
+    }
+        ?>
+    </div>
+    <div class="pm">
+        <?php
+        foreach ($db['pm'] as $key => $rule) {
+            var_dump($rule);
+        }
+        
+        ?>
+    </div>
+
+    <style>
+        div.teachers {
+            background-color: grey;
+            display: inline-block;
+        }
+
+        div.pm {
+            background-color: green;
+            display: inline-block;
+        }
+    </style>
+</body>
+
+</html>
