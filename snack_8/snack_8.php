@@ -35,7 +35,7 @@ $ads = [
 
 <?php foreach ($ads as $key => $ad) {
     if ($ads[$key]['is_active']) {
-        $img = $ads[rand(0,5)]["image_path"];
+        $img = $ads[rand(0,$key)]["image_path"];
     }
     
 } ?>
