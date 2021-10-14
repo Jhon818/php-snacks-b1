@@ -35,10 +35,9 @@ $ads = [
 
 <?php foreach ($ads as $key => $ad) {
     if ($ads[$key]['is_active']) {
-        $img = $ads[rand(0,$key)]["image_path"];
+        $img = $ads[rand(0, $key)]["image_path"];
     }
-    
-} ?>
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +48,6 @@ $ads = [
     <title>ads</title>
 </head>
 <body>
-    <img src="<?php echo $img  ?>" alt="">
+    <img src="<?php echo $img ?>" alt="">
 </body>
 </html>
