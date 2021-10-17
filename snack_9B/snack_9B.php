@@ -12,7 +12,7 @@ $distance_to_center = $_GET['distance_to_center'];
 
 
 
-if ($name || $description  || $parking || $vote || $distance_to_center) {
+if ($name || $parking || $vote || $distance_to_center) {
     foreach ($hotels as $key => $hotel) {
         $filteredArray = $hotel;
         // filtrare gli hotel che hanno un parcheggio, numero minimo di stelle o massima lontananza dal centro.
